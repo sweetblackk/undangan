@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#ececec;
+    font-family:'Cormorant Garamond', serif;
+}
+
+.cover{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.card{
+
+    width:100%;
+    max-width:700px;
+    min-height:900px;
+
+    position:relative;
+
+    background:
+    linear-gradient(
+    rgba(255,255,255,.95),
+    rgba(255,255,255,.95)
+    ),
+    url("assets/flowers-bottom.png");
+
+    background-repeat:no-repeat;
+    background-position:bottom center;
+    background-size:100% auto;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.1);
+
+    overflow:hidden;
+}
+
+.inner-border{
+    position:absolute;
+    inset:15px;
+
+    border:1px solid rgba(183,148,87,.3);
+    border-radius:10px;
+}
+
+.content{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    padding:
+    120px 30px
+    280px;
+}
+
+.small-text{
+    color:#666;
+    font-style:italic;
+    font-size:20px;
+}
+
+.bride,
+.groom{
+    color:#a7864d;
+
+    letter-spacing:8px;
+
+    font-weight:500;
+
+    font-size:72px;
+}
+
+.bride{
+    margin-top:40px;
+}
+
+.and{
+    font-family:'Parisienne', cursive;
+    font-size:60px;
+    color:#555;
+}
+
+.date{
+    margin-top:40px;
+
+    color:#a7864d;
+
+    font-size:42px;
+    letter-spacing:5px;
+}
+
+.time{
+    margin-top:10px;
+    color:#666;
+    font-size:28px;
+}
+
+.guest-wrapper{
+    margin-top:70px;
+}
+
+.invite-label{
+    color:#777;
+    margin-bottom:10px;
+}
+
+#guestName{
+    color:#8a6b35;
+    font-size:42px;
+    font-weight:600;
+}
+
+.btn-open{
+
+    margin-top:40px;
+
+    background:#b08a4f;
+    color:white;
+
+    border:none;
+
+    padding:
+    14px 36px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-size:18px;
+}
+
+.btn-open:hover{
+    opacity:.9;
+}
+
+@media(max-width:768px){
+
+    .content{
+        padding:
+        80px 20px
+        220px;
+    }
+
+    .bride,
+    .groom{
+        font-size:48px;
+        letter-spacing:4px;
+    }
+
+    .date{
+        font-size:34px;
+    }
+
+    #guestName{
+        font-size:30px;
+    }
+}

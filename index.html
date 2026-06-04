@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Undangan Pernikahan</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background:#f8f3ed;
+    color:#333;
+}
+
+.hero{
+    height:100vh;
+    background:linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200');
+    
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    color:white;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:600px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero h2{
+    font-size:36px;
+    margin-bottom:20px;
+}
+
+.tamu{
+    margin-top:20px;
+    background:white;
+    color:black;
+    padding:15px;
+    border-radius:10px;
+    display:inline-block;
+}
+
+.section{
+    padding:60px 20px;
+}
+
+.card{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.nama{
+    color:#b8860b;
+    margin:20px 0;
+}
+
+.countdown{
+    margin-top:20px;
+    font-size:24px;
+    font-weight:bold;
+    color:#b8860b;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:25px;
+    padding:12px 25px;
+    background:#b8860b;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    background:#222;
+    color:white;
+}
+
+@media(max-width:600px){
+
+.hero h1{
+    font-size:36px;
+}
+
+.hero h2{
+    font-size:28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Undangan Pernikahan</h1>
+
+<h2>Ahmad & Siti</h2>
+
+<p>Kepada Yth.</p>
+
+<div class="tamu" id="namaTamu">
+Tamu Undangan
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="card">
+
+<h2>Assalamu'alaikum Wr. Wb.</h2>
+
+<br>
+
+<p>
+Dengan memohon rahmat dan ridho Allah SWT,
+kami bermaksud mengundang Bapak/Ibu/Saudara/i
+untuk hadir pada acara pernikahan kami.
+</p>
+
+<div class="nama">
+
+<h2>Ahmad</h2>
+<p>Putra Bapak Ahmad & Ibu Aminah</p>
+
+<br>
+
+<h2>&</h2>
+
+<br>
+
+<h2>Siti</h2>
+<p>Putri Bapak Hasan & Ibu Fatimah</p>
+
+</div>
+
+<hr>
+
+<br>
+
+<h3>Akad Nikah</h3>
+
+<p>
+Minggu, 20 Desember 2026
+<br>
+09.00 WIB
+</p>
+
+<br>
+
+<h3>Resepsi</h3>
+
+<p>
+Minggu, 20 Desember 2026
+<br>
+11.00 WIB
+</p>
+
+<div class="countdown" id="countdown">
+Loading...
+</div>
+
+<a
+href="https://maps.google.com"
+target="_blank"
+class="btn">
+Lihat Lokasi
+</a>
+
+</div>
+
+</section>
+
+<section class="footer">
+
+<p>
+Terima kasih atas doa dan kehadirannya.
+</p>
+
+</section>
+
+<script>
+
+// ==========================
+// Nama Tamu dari URL
+// ==========================
+
+const params = new URLSearchParams(window.location.search);
+
+const nama = params.get("to");
+
+if(nama){
+document.getElementById("namaTamu").innerHTML = nama;
+}
+
+// ==========================
+// Countdown
+// ==========================
+
+const tanggalNikah =
+new Date("December 20, 2026 09:00:00").getTime();
+
+const hitungMundur = setInterval(function(){
+
+const sekarang = new Date().getTime();
+
+const jarak = tanggalNikah - sekarang;
+
+const hari =
+Math.floor(jarak / (1000*60*60*24));
+
+const jam =
+Math.floor(
+(jarak % (1000*60*60*24))
+/
+(1000*60*60)
+);
+
+const menit =
+Math.floor(
+(jarak % (1000*60*60))
+/
+(1000*60)
+);
+
+const detik =
+Math.floor(
+(jarak % (1000*60))
+/
+1000
+);
+
+document.getElementById("countdown").innerHTML =
+hari + " Hari " +
+jam + " Jam " +
+menit + " Menit " +
+detik + " Detik";
+
+if(jarak < 0){
+
+clearInterval(hitungMundur);
+
+document.getElementById("countdown").innerHTML =
+"Acara Sedang Berlangsung";
+
+}
+
+},1000);
+
+</script>
+
+</body>
+</html>

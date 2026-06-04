@@ -19,18 +19,29 @@ body{
 
 .card{
 
-    background-color:#fff;
+    width:100%;
+    max-width:700px;
 
-    background-image:
-    url("flowers-bottom.png");
+    min-height:900px;
+
+    position:relative;
+
+    background-color:#ffffff;
+
+    background-image:url("flowers-bottom.png");
 
     background-repeat:no-repeat;
 
-    background-position:
-    center bottom;
+    background-position:center bottom;
 
-    background-size:
-    100% 260px;
+    background-size:100% auto;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.1);
+
+    overflow:hidden;
 }
 
 .inner-border{

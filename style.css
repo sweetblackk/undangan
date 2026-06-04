@@ -30,7 +30,7 @@ body{
     rgba(255,255,255,.95),
     rgba(255,255,255,.95)
     ),
-    url("assets/flowers-bottom.png");
+    url("flowers-bottom.png");
 
     background-repeat:no-repeat;
     background-position:bottom center;

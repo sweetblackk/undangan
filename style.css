@@ -19,30 +19,18 @@ body{
 
 .card{
 
-    width:100%;
-    max-width:700px;
-    min-height:900px;
+    background-color:#fff;
 
-    position:relative;
-
-    background:
-    linear-gradient(
-    rgba(255,255,255,.95),
-    rgba(255,255,255,.95)
-    ),
+    background-image:
     url("flowers-bottom.png");
 
     background-repeat:no-repeat;
-    background-position:bottom center;
-    
-    background-size:cover;
-    
-    border-radius:16px;
 
-    box-shadow:
-    0 10px 40px rgba(0,0,0,.1);
+    background-position:
+    center bottom;
 
-    overflow:hidden;
+    background-size:
+    100% 260px;
 }
 
 .inner-border{

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+  <style>
+        :root { --pink: #f2b5d4; --sage: #b7c9a8; --lavender: #d4b5f2; --peach: #f5d5c8; --cream: #fef9f4; }
+        body { font-family: 'DM Sans', sans-serif; }
+        .font-display { font-family: 'Playfair Display', serif; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-up { animation: fadeUp 1s ease forwards; }
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .floral-border { border-image: linear-gradient(135deg, var(--pink), var(--lavender), var(--sage)) 1; }
+    </style>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/resizing_sdk.js" type="text/javascript"></script>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body data-template-id="__page-root" class="min-h-screen w-full" style="background: rgb(255, 255, 255);">
+  <main class="max-w-lg mx-auto px-6 py-12 text-center"><!-- Top floral -->
+   <div class="mb-8 animate-fade-up"><img data-template-id="hero-floral" class="canva-image w-64 h-64 mx-auto rounded-full object-cover shadow-lg ring-4 ring-pink-100" loading="lazy" src="https://images.pexels.com/photos/8785940/pexels-photo-8785940.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A beautiful bouquet of pink peonies and lavender on a white fabric background">
+   </div><!-- Heading -->
+   <p data-template-id="invite-label" class="canva-text text-sm uppercase tracking-[0.3em] animate-fade-up delay-1" style="color: rgb(183, 201, 168); font-weight: 500; font-style: normal; font-size: 13px;">The Wedding of</p>
+   <h1 data-template-id="couple-names" class="canva-text font-display mt-4 animate-fade-up delay-2" style="color: rgb(74, 55, 40); font-weight: 700; font-style: normal; font-size: 36px;">Anisa &amp; Rizky</h1><!-- Divider -->
+   <div class="my-8 flex items-center justify-center gap-3 animate-fade-up delay-3"><span class="h-px w-16 bg-gradient-to-r from-transparent to-pink-200"></span> <span class="text-2xl">🌸</span> <span class="h-px w-16 bg-gradient-to-l from-transparent to-pink-200"></span>
+   </div><!-- Date -->
+   <section class="animate-fade-up delay-3">
+    <p data-template-id="wedding-date" class="canva-text font-display text-lg" style="color: rgb(107, 91, 78); font-weight: 400; font-style: normal; font-size: 16px;">Sabtu, 15 Agustus 2026</p>
+    <p data-template-id="wedding-time" class="canva-text mt-2 text-sm" style="color: rgb(139, 123, 110); font-weight: 400; font-style: normal; font-size: 16px;">Akad Nikah: 10.00 WIB  •  Resepsi: 12.00 WIB</p>
+   </section><!-- Venue image -->
+   <div class="mt-10 rounded-2xl overflow-hidden shadow-md"><img data-template-id="venue-image" class="canva-image w-full h-48 object-cover" loading="lazy" src="https://images.pexels.com/photos/35629338/pexels-photo-35629338.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Beautiful outdoor wedding ceremony with white floral arch and chairs arranged beneath trees">
+   </div><!-- Venue details -->
+   <section class="mt-6">
+    <h2 data-template-id="venue-title" class="canva-text font-display" style="color: rgb(74, 55, 40); font-weight: 700; font-style: normal; font-size: 24px;">Garden Venue</h2>
+    <p data-template-id="venue-address" class="canva-text mt-2 text-sm leading-relaxed" style="color: rgb(139, 123, 110); font-weight: 400; font-style: normal; font-size: 16px;">Taman Bunga Indah
+Jl. Mawar No. 12, Jakarta Selatan</p>
+   </section><!-- Countdown -->
+   <section class="mt-10 p-6 rounded-2xl bg-pink-50/60 backdrop-blur">
+    <p data-template-id="countdown-label" class="canva-text text-xs uppercase tracking-widest" style="color: rgb(183, 201, 168); font-weight: 500; font-style: normal; font-size: 16px;">Menghitung Hari</p>
+    <div id="countdown" class="mt-3 flex justify-center gap-4 text-center">
+     <div>
+      <span id="days" class="text-3xl font-display font-bold text-pink-400">--</span>
+      <p class="text-[10px] uppercase tracking-wider text-gray-400 mt-1">Hari</p>
+     </div>
+     <div>
+      <span id="hours" class="text-3xl font-display font-bold text-purple-300">--</span>
+      <p class="text-[10px] uppercase tracking-wider text-gray-400 mt-1">Jam</p>
+     </div>
+     <div>
+      <span id="mins" class="text-3xl font-display font-bold text-green-300">--</span>
+      <p class="text-[10px] uppercase tracking-wider text-gray-400 mt-1">Menit</p>
+     </div>
+     <div>
+      <span id="secs" class="text-3xl font-display font-bold text-orange-300">--</span>
+      <p class="text-[10px] uppercase tracking-wider text-gray-400 mt-1">Detik</p>
+     </div>
+    </div>
+   </section><!-- Bottom floral -->
+   <div class="mt-10"><img data-template-id="divider-floral" class="canva-image w-full h-24 object-cover rounded-xl opacity-80" loading="lazy" src="https://images.pexels.com/photos/7965432/pexels-photo-7965432.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Elegant pink and white daisy petals form a delicate floral frame on a clean white background">
+   </div><!-- Footer message -->
+   <p data-template-id="footer-message" class="canva-text mt-8 text-sm italic" style="color: rgb(139, 123, 110); font-weight: 400; font-style: normal; font-size: 16px;">Merupakan suatu kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir. Terima kasih 💕</p>
+   <p class="mt-2 text-2xl">💐✨</p>
+  </main>
+  <script src="/_sdk/editing_sdk.js"></script>
+  <script>
+        // Countdown to wedding date
+        const weddingDate = new Date('2026-08-15T10:00:00+07:00');
+        function updateCountdown() {
+            const now = new Date();
+            const diff = weddingDate - now;
+            if (diff <= 0) { document.getElementById('countdown').innerHTML = '<p class="text-pink-400 font-display text-xl">Hari Bahagia! 🎉</p>'; return; }
+            const d = Math.floor(diff / 86400000);
+            const h = Math.floor((diff % 86400000) / 3600000);
+            const m = Math.floor((diff % 3600000) / 60000);
+            const s = Math.floor((diff % 60000) / 1000);
+            document.getElementById('days').textContent = d;
+            document.getElementById('hours').textContent = h;
+            document.getElementById('mins').textContent = m;
+            document.getElementById('secs').textContent = s;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a067f4350c5bce52',t:'MTc4MDU4Njc2NQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+</body></html>
